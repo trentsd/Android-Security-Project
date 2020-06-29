@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.discord.app.AppViewFlipper android:id="@id/payment_methods_view_flipper" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ProgressBar android:layout_gravity="center" android:id="@id/payment_methods_loading" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/payment_methods_recycler" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/UiKit.ViewGroup.RecyclerView" />
+        <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/UiKit.ViewGroup.LinearLayout">
+            <ImageView android:layout_marginBottom="@dimen/uikit_spacing_medium" android:src="@drawable/img_poop_dark" android:importantForAccessibility="no" style="@style/UiKit.ImageView" />
+            <Button android:id="@id/payment_methods_retry" android:layout_width="wrap_content" android:text="@string/retry" style="@style/UiKit.Button.Grey" />
+        </LinearLayout>
+    </com.discord.app.AppViewFlipper>
+</FrameLayout>

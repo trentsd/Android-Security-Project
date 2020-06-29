@@ -1,0 +1,168 @@
+.class public abstract Lcom/google/android/gms/internal/f/h;
+.super Lcom/google/android/gms/internal/f/b;
+
+# interfaces
+.implements Lcom/google/android/gms/internal/f/g;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    const-string v0, "com.google.android.gms.safetynet.internal.ISafetyNetCallbacks"
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/f/b;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method protected final d(ILandroid/os/Parcel;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    packed-switch p1, :pswitch_data_0
+
+    :pswitch_0
+    const/4 p1, 0x0
+
+    return p1
+
+    :pswitch_1
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    sget-object p1, Lcom/google/android/gms/safetynet/zzh;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/f/h;->rB()V
+
+    goto :goto_0
+
+    :pswitch_2
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/f/h;->rA()V
+
+    goto :goto_0
+
+    :pswitch_3
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    invoke-static {p2}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;)Z
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/f/h;->rz()V
+
+    goto :goto_0
+
+    :pswitch_4
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    sget-object p1, Lcom/google/android/gms/safetynet/zzd;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/f/h;->ry()V
+
+    goto :goto_0
+
+    :pswitch_5
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/android/gms/common/api/Status;
+
+    sget-object v0, Lcom/google/android/gms/safetynet/zzf;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, v0}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/google/android/gms/safetynet/zzf;
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/internal/f/h;->a(Lcom/google/android/gms/common/api/Status;Lcom/google/android/gms/safetynet/zzf;)V
+
+    goto :goto_0
+
+    :pswitch_6
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    invoke-static {p2}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;)Z
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/f/h;->rx()V
+
+    goto :goto_0
+
+    :pswitch_7
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    sget-object p1, Lcom/google/android/gms/safetynet/SafeBrowsingData;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/f/h;->rw()V
+
+    goto :goto_0
+
+    :pswitch_8
+    invoke-virtual {p2}, Landroid/os/Parcel;->readString()Ljava/lang/String;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/f/h;->rv()V
+
+    goto :goto_0
+
+    :pswitch_9
+    sget-object p1, Lcom/google/android/gms/common/api/Status;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    sget-object p1, Lcom/google/android/gms/safetynet/zza;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    invoke-static {p2, p1}, Lcom/google/android/gms/internal/f/c;->b(Landroid/os/Parcel;Landroid/os/Parcelable$Creator;)Landroid/os/Parcelable;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/f/h;->ru()V
+
+    :goto_0
+    const/4 p1, 0x1
+
+    return p1
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_0
+        :pswitch_5
+        :pswitch_0
+        :pswitch_4
+        :pswitch_0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+    .end packed-switch
+.end method

